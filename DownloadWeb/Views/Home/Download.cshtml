@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Download--吃药的网站</title>
+</head>
+<body>
+    <div>
+        @{ 
+            string[] name = ViewBag.FileName as string[];
+            int length = name.Length;
+        } 
+        @for(int count = 0; count < length; count++)
+        {
+            <a href="@Url.Action("fileDownload","Home",new { id=count})">@name[count]</a>
+        }
+    </div>
+</body>
+</html>
